@@ -1,0 +1,111 @@
+---
+// src/components/Header.astro
+---
+
+<header class="fixed w-full z-50 font-sans shadow-md">
+    
+    <div class="bg-navy-900 text-blue-100 text-xs tracking-wide py-2 border-b border-white/10 relative z-50">
+        <div class="container mx-auto px-6 flex justify-between md:justify-end items-center">
+            <span class="md:hidden flex items-center gap-2 text-white font-bold text-[10px] uppercase tracking-widest">
+                <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                Villa Ballester, San Martín
+            </span>
+            <div class="hidden md:flex gap-8 font-medium text-[11px] uppercase tracking-widest opacity-90">
+                <span class="flex items-center gap-2 cursor-default">Lun a Vie, 9 a 18hs</span>
+                <a href="mailto:consultas@estudioperez.com.ar" class="hover:text-white transition-colors flex items-center gap-2">consultas@estudioperez.com.ar</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="bg-white/95 backdrop-blur-xl border-b border-slate-100 relative z-40">
+        <div class="container mx-auto px-6 h-20 flex justify-between items-center">
+            
+            <a href="#" class="flex flex-col group z-50">
+                <span class="font-serif text-lg md:text-2xl tracking-wide font-bold text-navy-900 group-hover:text-blue-700 transition-colors">
+                    LEONARDO PEREZ
+                </span>
+                <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 group-hover:text-navy-900 transition-colors">
+                    Abogado • San Martín
+                </span>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="#" class="text-xs font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 transition-colors">Inicio</a>
+                <a href="#servicios" class="text-xs font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 transition-colors">Especialidades</a>
+                <a href="#ubicacion" class="text-xs font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 transition-colors">Ubicación</a>
+            </div>
+
+            <div class="flex items-center gap-4 z-50">
+                
+                <a href="https://wa.me/5491157203891?text=Hola%20Dr.%20Pérez,%20le%20escribo%20desde%20su%20web.%20Quisiera%20realizar%20una%20consulta." target="_blank" class="flex items-center bg-navy-900 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-xs font-bold uppercase tracking-widest transition-all shadow-lg shadow-blue-900/20">
+                    <span class="hidden md:inline">Consulta Gratuita</span>
+                    <span class="md:hidden">WhatsApp</span>
+                </a>
+
+                <button id="menu-toggle" class="lg:hidden text-navy-900 focus:outline-none w-8 h-8 relative flex flex-col justify-center items-center gap-1.5 group">
+                    <span id="line-1" class="w-6 h-0.5 bg-navy-900 rounded-full transition-all duration-300 ease-in-out transform origin-center"></span>
+                    <span id="line-2" class="w-6 h-0.5 bg-navy-900 rounded-full transition-all duration-300 ease-in-out"></span>
+                    <span id="line-3" class="w-6 h-0.5 bg-navy-900 rounded-full transition-all duration-300 ease-in-out transform origin-center"></span>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-xl overflow-hidden transition-all duration-500 ease-in-out max-h-0 opacity-0">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#" class="mobile-link block text-sm font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 py-2 border-b border-slate-50">Inicio</a>
+                <a href="#servicios" class="mobile-link block text-sm font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 py-2 border-b border-slate-50">Especialidades</a>
+                <a href="#ubicacion" class="mobile-link block text-sm font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 py-2 border-b border-slate-50">Ubicación</a>
+                <div class="pt-4">
+                    <p class="text-xs text-slate-400 uppercase tracking-widest mb-2">Contacto Directo</p>
+                    <p class="text-navy-900 font-bold">11 5720-3891</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const line1 = document.getElementById('line-1');
+    const line2 = document.getElementById('line-2');
+    const line3 = document.getElementById('line-3');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+        
+        // Verificamos que los elementos existan antes de usarlos (ESTO ARREGLA EL ERROR DE NULL)
+        if (mobileMenu && line1 && line2 && line3) {
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                mobileMenu.classList.add('max-h-screen', 'opacity-100');
+                
+                line1.classList.add('rotate-45', 'translate-y-2');
+                line2.classList.add('opacity-0', '-translate-x-2');
+                line3.classList.add('-rotate-45', '-translate-y-2');
+            } else {
+                mobileMenu.classList.add('max-h-0', 'opacity-0');
+                mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                
+                line1.classList.remove('rotate-45', 'translate-y-2');
+                line2.classList.remove('opacity-0', '-translate-x-2');
+                line3.classList.remove('-rotate-45', '-translate-y-2');
+            }
+        }
+    }
+
+    // Solo agregamos el evento si el botón existe
+    if (menuToggle) {
+        menuToggle.addEventListener('click', toggleMenu);
+    }
+
+    // Cerrar al hacer clic en un enlace
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if(isMenuOpen) toggleMenu();
+        });
+    });
+</script>

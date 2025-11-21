@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+
+}
+
 @theme {
   --font-serif: "Playfair Display", serif;
   --font-sans: "Lato", sans-serif;
@@ -13,4 +18,29 @@
   /* Gold = Ahora es un Cian/Celeste grisáceo (para detalles suaves) */
   --color-gold-500: #64748b; /* Slate 500 - Gris azulado */
   --color-gold-600: #475569; /* Slate 600 */
+}
+
+/* ANIMACIONES PERSONALIZADAS (VERSIÓN INTENSA) */
+
+/* 1. El Latido Fuerte (Ahora se expande un 15% más) */
+/* 1. El Latido (VUELTA AL SUAVE) */
+/* @keyframes strong-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.05); } /* Crece poquito, elegante */
+/* }
+
+.animate-strong-pulse {
+  /* Lento (3s) para que sea un "respiro" y no una alarma */
+  /* animation: strong-pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+} */ 
+
+/* 2. El Tilteo (SE QUEDA FUERTE) */
+@keyframes subtle-tilt {
+  0%, 100% { transform: rotate(-12deg); } /* Ángulo marcado */
+  50% { transform: rotate(12deg); }       /* Ángulo marcado */
+}
+
+.animate-subtle-tilt {
+  /* Rápido (1.5s) para que tenga energía */
+  animation: subtle-tilt 1.5s ease-in-out infinite;
 }

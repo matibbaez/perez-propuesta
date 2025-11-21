@@ -9,7 +9,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Propuesta de diseño web para Leonardo Perez" />
@@ -24,6 +24,61 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body class="font-sans bg-slate-50 text-slate-800 antialiased">
+        
         <slot />
+
+        <script>
+            import Lenis from 'lenis';
+
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true,
+            });
+
+            // Le decimos a TS que 'time' es un número
+            function raf(time: number) {
+                lenis.raf(time);
+                requestAnimationFrame(raf);
+            }
+
+            requestAnimationFrame(raf);
+
+            // Arreglo del error de 'this'
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Usamos e.currentTarget en lugar de 'this' y lo forzamos como Elemento HTML
+                    const target = e.currentTarget as HTMLAnchorElement;
+                    const href = target.getAttribute('href');
+                    
+                    if (href && href !== '#') {
+                        lenis.scrollTo(href);
+                    }
+                });
+            });
+        </script>
+
+        <style is:global>
+            html.lenis, html.lenis body {
+                height: auto;
+            }
+            
+            .lenis.lenis-smooth {
+                scroll-behavior: auto !important;
+            }
+            
+            .lenis.lenis-smooth [data-lenis-prevent] {
+                overscroll-behavior: contain;
+            }
+            
+            .lenis.lenis-stopped {
+                overflow: hidden;
+            }
+            
+            .lenis.lenis-scrolling iframe {
+                pointer-events: none;
+            }
+        </style>
     </body>
 </html>

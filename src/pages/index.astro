@@ -1,85 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <Layout title="Estudio Jurídico Leonardo Perez | Lanús">
     
-    <div class="fixed w-full z-50 font-sans shadow-md">
-        
-        <div class="bg-navy-900 text-blue-100 text-xs tracking-wide py-2 border-b border-white/10 relative z-20">
-            <div class="container mx-auto px-6 flex justify-between md:justify-end items-center">
-                
-                <span class="md:hidden flex items-center gap-2 text-white font-bold text-[10px] uppercase tracking-widest">
-                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-                    Abogado en Lanús
-                </span>
+    <Navbar /> 
 
-                <div class="hidden md:flex gap-8 font-medium text-[11px] uppercase tracking-widest opacity-90">
-                    <span class="flex items-center gap-2 cursor-default">
-                        <svg class="w-3 h-3 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        Lun a Vie, 9 a 18hs
-                    </span>
-                    <a href="mailto:consultas@leonardoperez.com" class="hover:text-white transition-colors flex items-center gap-2">
-                        <svg class="w-3 h-3 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        consultas@leonardoperez.com
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <nav class="bg-white/95 backdrop-blur-xl border-b border-slate-100 relative z-10">
-            <div class="container mx-auto px-6 h-20 flex justify-between items-center">
-                
-                <a href="#" class="flex flex-col group">
-                    <span class="font-serif text-xl md:text-2xl tracking-wide font-bold text-navy-900 group-hover:text-blue-700 transition-colors">
-                        LEONARDO PEREZ
-                    </span>
-                    <span class="text-[10px] uppercase tracking-[0.2em] text-slate-500 group-hover:text-navy-900 transition-colors">
-                        Abogado • Lanús
-                    </span>
-                </a>
-
-                <div class="hidden lg:flex items-center gap-8">
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 transition-colors">Inicio</a>
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 transition-colors">Especialidades</a>
-                    <a href="#" class="text-xs font-bold uppercase tracking-widest text-navy-900 hover:text-blue-600 transition-colors">Ubicación</a>
-                </div>
-
-                <div class="flex items-center gap-4">
-                    
-                    <a href="https://wa.me/54911XXXXXXXX" class="md:hidden flex items-center justify-center w-10 h-10 bg-navy-900 text-white rounded-full shadow-lg active:scale-95 transition-transform">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.897.001-6.621 5.297-11.94 11.926-11.94 3.139.002 6.087 1.226 8.306 3.446 2.217 2.22 3.441 5.171 3.44 8.306-.003 6.622-5.369 11.95-11.986 11.95-1.944-.001-3.875-.522-5.601-1.509l-6.184 1.808zm18.122-8.712c-.458-.229-2.713-1.338-3.134-1.492-.419-.153-.726-.229-1.032.23-.307.458-1.182 1.491-1.449 1.796-.267.307-.536.345-.995.115-2.146-1.075-3.951-2.51-5.358-4.935-.364-.627-.039-.966.274-1.247.285-.256.626-.664.94-1.005.137-.151.26-.34.383-.575.132-.244.066-.458-.034-.663-.1-.204-.901-2.172-1.234-2.973-.324-.781-.654-.675-.9-.687-.229-.011-.492-.011-.757-.011-.266 0-.697.1-.106.599 1.095 1.707 1.707 1.131 2.125 1.644 3.692.512 1.568 1.275 2.756 3.023 3.504.748.318 1.526.469 2.462.339 1.167-.162 3.223-1.317 3.678-2.587.456-1.27.456-2.356.32-2.587-.135-.23-.496-.37-.955-.6z"/></svg>
-                    </a>
-
-                    <a href="https://wa.me/54911XXXXXXXX" target="_blank" class="hidden md:flex items-center bg-navy-900 hover:bg-blue-700 text-white px-6 py-2.5 rounded-md text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-lg shadow-blue-900/20 group">
-                        <span>Consulta Gratuita</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </nav>
-    </div>
+    <navbar class="relative pt-32 pb-20 bg-slate-50">
 
     <header class="relative pt-32 pb-20 bg-slate-50">
         <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             
             <div class="space-y-6 animate-fade-in-up">
-                <div class="inline-block px-3 py-1 bg-blue-100 text-navy-900 rounded-full text-xs font-bold tracking-wide uppercase">
-                    Familia • Laboral • Previsional
+                <div class="relative inline-flex group mt-2">
+                    
+                    <div class="absolute -inset-px bg-gradient-to-r from-blue-500 to-blue-700 rounded-full blur-md opacity-75 animate-strong-pulse"></div>
+                    
+                    <div class="relative inline-flex items-center gap-3 px-5 py-2 bg-navy-900 text-white rounded-full border border-blue-400/30 shadow-xl backdrop-blur-sm">
+                        
+                        <svg class="w-5 h-5 text-blue-300 animate-subtle-tilt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                            <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
+                        </svg>
+                        
+                        <span class="text-xs font-bold tracking-widest uppercase text-blue-50 text-shadow-sm">
+                            Abogado Egresado de la UBA
+                        </span>
+                    </div>
                 </div>
 
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif text-navy-900 font-bold leading-tight">
-                    Soluciones legales <br> <span class="text-blue-600">cercanas y efectivas.</span>
+                    Dr. Leonardo Javier Pérez <br> <span class="text-blue-600">Defensa y Asesoramiento.</span>
                 </h1>
                 
                 <p class="text-slate-600 text-lg leading-relaxed max-w-lg">
-                    Asesoramiento jurídico integral en Lanús. Protegemos sus derechos en el ámbito familiar, laboral y en su futura jubilación.
+                    Soluciones legales en San Martín y Villa Ballester. Especialistas en Derecho de Familia, Divorcios, Derecho Comercial y Jubilaciones.
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 pt-2">
-                    <a href="#contacto" class="bg-navy-900 text-white px-8 py-3 rounded-md font-bold text-center hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20">
+                    <a href="https://wa.me/5491157203891?text=Hola%20Dr.%20Pérez,%20quisiera%20asesoramiento%20sobre%20un%20tema%20legal." class="bg-navy-900 text-white px-8 py-3 rounded-md font-bold text-center hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20">
                         Tengo una Consulta
                     </a>
                     <a href="#servicios" class="px-8 py-3 rounded-md font-bold text-center text-navy-900 border border-slate-300 hover:bg-white hover:border-navy-900 transition-all">
@@ -90,8 +51,8 @@ import Layout from '../layouts/Layout.astro';
 
             <div class="relative h-[400px] rounded-xl overflow-hidden shadow-2xl border-4 border-white">
                  <img 
-                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop" 
-                    alt="Asesoramiento Legal" 
+                    src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2000&auto=format&fit=crop" 
+                    alt="Estudio Jurídico Dr. Pérez" 
                     class="w-full h-full object-cover"
                 />
             </div>
@@ -102,7 +63,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-3xl font-serif text-navy-900 font-bold">Nuestras Áreas de Práctica</h2>
-                <p class="text-slate-500 mt-4">Experiencia comprobable en los fueros más importantes.</p>
+                <p class="text-slate-500 mt-4">Experiencia académica y práctica (UBA).</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -112,15 +73,19 @@ import Layout from '../layouts/Layout.astro';
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold text-navy-900 mb-3">Derecho de Familia</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Divorcios, cuota alimentaria, régimen de visitas y filiaciones. Resolvemos conflictos priorizando el bienestar familiar.</p>
+                    <ul class="text-slate-600 text-sm leading-relaxed list-disc list-inside space-y-1">
+                        <li><strong>Divorcios</strong> (Express y Contenciosos)</li>
+                        <li><strong>Alimentos</strong> y Cuota Alimentaria</li>
+                        <li>Régimen de Visitas y Filiaciones</li>
+                    </ul>
                 </div>
 
                 <div class="bg-slate-50 p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-blue-200 group">
                     <div class="w-12 h-12 bg-blue-100 text-navy-900 rounded-lg flex items-center justify-center mb-6 group-hover:bg-navy-900 group-hover:text-white transition-colors">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-                    <h3 class="text-xl font-bold text-navy-900 mb-3">Derecho Laboral</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">Despidos sin causa, trabajo en negro, accidentes laborales (ART) e indemnizaciones. Defendemos sus derechos como trabajador.</p>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Derecho Comercial</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">Asesoramiento a empresas y particulares. Contratos comerciales, ejecuciones, cheques, pagarés y concursos preventivos.</p>
                 </div>
 
                 <div class="bg-slate-50 p-8 rounded-xl hover:shadow-xl transition-all duration-300 border border-slate-100 hover:border-blue-200 group">
@@ -153,7 +118,7 @@ import Layout from '../layouts/Layout.astro';
                     
                     <ul class="space-y-6">
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center flex-shrink-0 mt-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center shrink-0 mt-1">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
                             </div>
                             <div>
@@ -162,7 +127,7 @@ import Layout from '../layouts/Layout.astro';
                             </div>
                         </li>
                         <li class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center flex-shrink-0 mt-1">
+                            <div class="w-10 h-10 rounded-full bg-blue-800 flex items-center justify-center shrink-0 mt-1">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                             <div>
@@ -199,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
                             </div>
                         </div>
 
-                        <a href="https://wa.me/54911XXXXXXXX" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-bold py-3 rounded mt-8 transition-colors uppercase tracking-wider text-sm">
+                        <a href="https://wa.me/5491157203891?text=Hola%20Dr.,%20quisiera%20iniciar%20una%20evaluación%20de%20mi%20caso." class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center font-bold py-3 rounded mt-8 transition-colors uppercase tracking-wider text-sm">
                             Iniciar Paso 1 Ahora
                         </a>
                     </div>
@@ -209,7 +174,7 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <section class="py-20 bg-slate-50 border-t border-slate-200">
+    <section id="ubicacion" class="py-20 bg-slate-50 border-t border-slate-200">
         <div class="container mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 
@@ -217,32 +182,31 @@ import Layout from '../layouts/Layout.astro';
                     <div>
                         <span class="text-blue-600 font-bold tracking-widest text-xs uppercase mb-2 block">Estamos Cerca</span>
                         <h2 class="text-3xl md:text-4xl font-serif text-navy-900 font-bold">
-                            Visítenos en el centro de Lanús.
+                            Visítenos en Villa Ballester.
                         </h2>
                         <p class="text-slate-600 mt-4 text-lg">
-                            Nuestras oficinas están ubicadas estratégicamente para su comodidad. Fácil acceso y atención puntual.
+                            Nuestras oficinas están ubicadas en pleno centro comercial, con fácil acceso y estacionamiento en la zona.
                         </p>
                     </div>
 
                     <div class="grid sm:grid-cols-2 gap-6">
                         <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                            <div class="w-10 h-10 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            </div>
-                            <h4 class="font-bold text-navy-900 mb-1">Dirección</h4>
-                            <p class="text-sm text-slate-500">
-                                Calle Hipólito Yrigoyen 4500<br>
-                                Piso 2, Oficina A<br>
-                                Lanús Oeste
+                            <h4 class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Dirección
+                            </h4>
+                            <p class="text-sm text-slate-500 mt-2">
+                                Arenales 3889<br>
+                                Villa Ballester, San Martín<br>
+                                (A metros de la estación)
                             </p>
                         </div>
-
                         <div class="bg-white p-6 rounded-lg shadow-sm border border-slate-100">
-                            <div class="w-10 h-10 bg-blue-50 text-blue-700 rounded-full flex items-center justify-center mb-4">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            </div>
-                            <h4 class="font-bold text-navy-900 mb-1">Horarios</h4>
-                            <p class="text-sm text-slate-500">
+                            <h4 class="font-bold text-navy-900 mb-1 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                Horarios
+                            </h4>
+                            <p class="text-sm text-slate-500 mt-2">
                                 Lun a Vie: 9:00 - 18:00<br>
                                 Sábados: Con turno previo
                             </p>
@@ -250,32 +214,28 @@ import Layout from '../layouts/Layout.astro';
                     </div>
 
                     <div class="flex gap-4 pt-4">
-                        <a href="https://wa.me/54911XXXXXXXX" class="text-blue-700 font-bold hover:underline flex items-center gap-2">
-                            Solicitar ubicación por WhatsApp &rarr;
+                        <a href="https://wa.me/5491157203891?text=Hola%20Dr.%20Pérez,%20quisiera%20solicitar%20un%20turno%20en%20su%20estudio." class="text-blue-700 font-bold hover:underline flex items-center gap-2 group">
+                            Solicitar turno por WhatsApp 
+                            <span class="group-hover:translate-x-1 transition-transform">→</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="relative h-[400px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white group">
-                    <img 
-                        src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?q=80&w=2662&auto=format&fit=crop" 
-                        alt="Mapa Ubicación Lanús" 
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                    />
+                    <iframe 
+                        src="https://maps.google.com/maps?q=Arenales%203889%2C%20Villa%20Ballester&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        class="grayscale hover:grayscale-0 transition-all duration-500"
+                    ></iframe>
                     
-                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <span class="relative flex h-8 w-8">
-                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                          <span class="relative inline-flex rounded-full h-8 w-8 bg-blue-600 border-4 border-white shadow-lg"></span>
-                        </span>
-                        <div class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white px-3 py-1 rounded shadow-lg text-xs font-bold text-navy-900 whitespace-nowrap">
-                            Estudio Pérez
-                        </div>
-                    </div>
-                    
-                    <div class="absolute bottom-6 right-6">
-                        <a href="#" class="bg-white text-navy-900 px-4 py-2 rounded text-xs font-bold shadow-lg hover:bg-slate-100 transition-colors">
-                            Ver en Google Maps
+                    <div class="absolute bottom-6 right-6 pointer-events-none">
+                        <a href="https://www.google.com/maps/search/?api=1&query=Arenales+3889+Villa+Ballester" target="_blank" class="bg-white text-navy-900 px-4 py-2 rounded-md text-xs font-bold shadow-lg hover:bg-blue-50 transition-colors pointer-events-auto flex items-center gap-2">
+                            <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z"/></svg>
+                            Abrir GPS
                         </a>
                     </div>
                 </div>
@@ -284,14 +244,55 @@ import Layout from '../layouts/Layout.astro';
         </div>
     </section>
 
-    <footer class="bg-navy-900 text-white py-10 text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="font-serif text-2xl mb-2">Dr. Leonardo Perez</h2>
-            <p class="text-white/60 text-sm mb-6">Abogado | Lanús</p>
-            <div class="flex justify-center gap-4 text-sm text-slate-300">
-                 <span>• Familia</span>
-                 <span>• Laboral</span>
-                 <span>• Previsional</span>
+    <footer class="bg-navy-900 text-blue-100 border-t-4 border-blue-600 font-sans text-sm relative">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-serif text-2xl text-white font-bold tracking-wide">LEONARDO PEREZ</h3>
+                        <span class="text-[10px] uppercase tracking-[0.2em] text-blue-400 block mt-1">Abogado UBA • Mat. Tº Fº</span>
+                    </div>
+                    <p class="text-blue-200 leading-relaxed opacity-80 text-sm">
+                        Compromiso, ética y resultados. Asesoramiento integral en San Martín y Villa Ballester.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-widest mb-6 text-xs border-b border-blue-700 pb-2 inline-block">Qué Hacemos</h4>
+                    <ul class="space-y-3">
+                        <li><span class="text-blue-500">›</span> Derecho de Familia</li>
+                        <li><span class="text-blue-500">›</span> Divorcios y Alimentos</li>
+                        <li><span class="text-blue-500">›</span> Derecho Comercial</li>
+                        <li><span class="text-blue-500">›</span> Jubilaciones</li>
+                        <li><span class="text-blue-500">›</span> Sucesiones</li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-widest mb-6 text-xs border-b border-blue-700 pb-2 inline-block">El Estudio</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white">Inicio</a></li>
+                        <li><a href="#" class="hover:text-white">Sobre el Dr. Pérez</a></li>
+                        <li><a href="#ubicacion" class="hover:text-white">Nuestra Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-widest mb-6 text-xs border-b border-blue-700 pb-2 inline-block">Contacto</h4>
+                    <ul class="space-y-5">
+                        <li class="flex items-start gap-3">
+                            <span>
+                                <strong class="block text-white">Estudio Ballester</strong>
+                                Arenales 3889<br>Villa Ballester, San Martín
+                            </span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <a href="https://wa.me/5491157203891" class="hover:text-white transition-colors font-bold text-lg tracking-wide">11 5720-3891</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
     </footer>
