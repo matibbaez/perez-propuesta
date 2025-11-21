@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Lato", sans-serif;
+
+  /* PALETA LEONARDO PEREZ (Azul y Gris Claro) */
+  
+  /* Navy = Ahora es Azul Rey (Royal Blue) */
+  --color-navy-800: #1e40af; /* Blue 800 */
+  --color-navy-900: #1e3a8a; /* Blue 900 - Azul fuerte */
+  
+  /* Gold = Ahora es un Cian/Celeste grisáceo (para detalles suaves) */
+  --color-gold-500: #64748b; /* Slate 500 - Gris azulado */
+  --color-gold-600: #475569; /* Slate 600 */
+}
